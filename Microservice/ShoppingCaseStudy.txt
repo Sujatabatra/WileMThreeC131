@@ -85,5 +85,5 @@ public Order findOrderById (Long id)
 Spring boot : Data JPA, Lombok, MySQL
 
 
-C131A : create the above services in microservice aechitecture by using eureka server, Api Gateway, Circuit breaker, Config Server and atleast call one service from react by through API Gateway.
-C131B : create the above services in microservice aechitecture by using eureka server, Api Gateway, Circuit breaker, Config Server and create React and Spring MVC as well.
+C131A : create the above services in microservice architecture by using eureka server, Api Gateway, Circuit breaker, Config Server and atleast call one service using react JS through API Gateway.
+C131B : create the above services in microservice architecture by using eureka server, Api Gateway, Circuit breaker, Config Server and create React and Spring MVC application as well.
