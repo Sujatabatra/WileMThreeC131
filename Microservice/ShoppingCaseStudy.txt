@@ -1,0 +1,89 @@
+catalog-service project 
+(Rest API + JDBC[Any Database])
+
+public class Product {
+    private Long id; (Primary key)
+    private String code;
+    private String name;
+    private String description;
+    private double price;
+}
+
+public class ProductList {
+   private List<Product> products;
+}
+
+Rest API  Resource
+
+@GetMapping - (path = "/products")
+public List<Product> listAllProducts()
+
+@GetMapping - (path = "/products /code /{productCode}")
+public Optional<Product> getProductByCode(String productCode) 
+
+Spring Boot : Lombok, Spring Web, DatabaseDriver, JDBC API
+
+
+==================================================================================================
+
+
+inventory-service-project
+(Rest API + JPA[MySQL Database])
+
+public class InventoryItem {
+    private Long id; (primary key)
+    private String productCode;
+    private Integer availableQuantity ;
+}
+
+public class InventoryItemList {
+    private List<InventoryItem> inventoryItems;
+}
+
+Rest API  Resource
+
+@GetMapping - (path = "/code/{productCode}")
+public InventoryItem getInventoryItemByProductCode (String productCode) 
+
+@PutMapping - (path = "/code/{productCode}/{ availableQuantity }")
+public updateInventoryItemQuantityByProductCode(String productCode, int availableQuantity)
+
+
+Spring boot : lombok, Spring Web , Data JPA, MySqlDriver 
+
+
+
+
+
+=============================================================================
+order-service-project 
+(Rest API + JPA[MySQL Database])
+public class OrderItem {
+    private Long id;
+    private Long productId;
+    private int quantity;
+    private BigDecimal productPrice;
+}
+
+public class Order {
+    private Long id;
+    private String customerEmail;
+    private String customerAddress;
+    private List<OrderItem> items;
+}
+
+public class OrderList {
+    private List<Order> orders;
+}
+
+Rest API  Resource
+@PostMapping - (path = "/orders")
+pubic URL saveOder(Order order)
+@GetMapping - (path = "/orders/{id}")
+public Order findOrderById (Long id) 
+
+Spring boot : Data JPA, Lombok, MySQL
+
+
+C131A : create the above services in microservice aechitecture by using eureka server, Api Gateway, Circuit breaker, Config Server and atleast call one service from react by through API Gateway.
+C131B : create the above services in microservice aechitecture by using eureka server, Api Gateway, Circuit breaker, Config Server and create React and Spring MVC as well.
